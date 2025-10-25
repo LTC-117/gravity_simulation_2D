@@ -3,12 +3,13 @@
 #include "gravity.h"
 
 
-int main(void){
+int main(void)
+{
     SDL_Init(SDL_INIT_VIDEO);
     SDL_Window *window = SDL_CreateWindow("Gravity Sim", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, WIDTH, HEIGHT, SDL_WINDOW_BORDERLESS);
     SDL_Surface *surface = SDL_GetWindowSurface(window);
 
-    if(surface == NULL){
+    if (surface == NULL) {
         printf("ERROR");
     }
 
@@ -19,13 +20,13 @@ int main(void){
     SDL_Event event;
     int simulation_running = 1;
 
-    while(simulation_running != 0){
-        while(SDL_PollEvent(&event)){
-            if(event.type == SDL_QUIT){
+    while (simulation_running != 0) {
+        while (SDL_PollEvent(&event)) {
+            if (event.type == SDL_QUIT) {
                 simulation_running = 0;
             }
-            if(event.type == SDL_KEYDOWN){
-                if(event.key.keysym.sym == SDLK_SPACE){
+            if (event.type == SDL_KEYDOWN) {
+                if (event.key.keysym.sym == SDLK_SPACE) {
                     simulation_running = 0;
                 }
             }
